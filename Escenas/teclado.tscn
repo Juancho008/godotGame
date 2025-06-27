@@ -1,0 +1,700 @@
+[gd_scene load_steps=10 format=3 uid="uid://cq2egjpmv5oon"]
+
+[ext_resource type="Script" uid="uid://duss8fnoafmat" path="res://Scripts/Teclado/teclado.gd" id="1_r2wwx"]
+[ext_resource type="Texture2D" uid="uid://c2pnb302xk4p8" path="res://Imagenes/maga/misiones.png" id="2_4p00t"]
+[ext_resource type="Script" uid="uid://tc3hmobg365u" path="res://Escenas/db.gd" id="2_m7fxd"]
+[ext_resource type="Texture2D" uid="uid://5p71mm3a2kcp" path="res://Imagenes/maga/imgaen (1).png" id="3_g25ix"]
+[ext_resource type="StyleBox" uid="uid://b0xwl1h46ijpx" path="res://Themes/teclado.tres" id="3_u3y70"]
+[ext_resource type="AudioStream" uid="uid://dcf4oelnvl213" path="res://Musica/buttonShort.mp3" id="6_b37i2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u3y70"]
+texture = ExtResource("3_g25ix")
+expand_margin_bottom = 10.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b37i2"]
+load_path = "res://.godot/imported/imgaen (1).png-f94e04fb9e3e39463f91fa697064481e.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gkt5b"]
+texture = SubResource("CompressedTexture2D_b37i2")
+expand_margin_bottom = 10.0
+
+[node name="Teclado" type="Control"]
+layout_mode = 3
+anchor_right = 1.003
+anchor_bottom = 0.4
+offset_left = 3.0
+offset_top = -1.0
+offset_right = -0.0980225
+offset_bottom = -0.200012
+script = ExtResource("1_r2wwx")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 2.49
+offset_left = 1.0
+offset_right = -5.0
+offset_bottom = 0.0800171
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4p00t")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.169
+anchor_top = 0.038
+anchor_right = 0.89
+anchor_bottom = 0.159
+offset_left = -11.023
+offset_top = 46.296
+offset_right = -11.703
+offset_bottom = 50.028
+theme_override_font_sizes/font_size = 60
+text = "Ingrese su Nombre"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InputNombre" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.061
+anchor_top = 0.211
+anchor_right = 0.96
+anchor_bottom = 0.5
+offset_left = 0.612991
+offset_top = 75.012
+offset_right = -0.320068
+offset_bottom = 131.0
+theme_override_font_sizes/font_size = 90
+
+[node name="GridContainer" type="GridContainer" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.124
+anchor_top = 0.075
+anchor_right = -2.001
+anchor_bottom = 0.672
+offset_left = 2935.51
+offset_top = 317.9
+offset_right = 4059.37
+offset_bottom = 406.024
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 20
+columns = 10
+
+[node name="Button1" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_u3y70")
+theme_override_styles/normal = SubResource("StyleBoxTexture_gkt5b")
+text = "1"
+
+[node name="Button2" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "2"
+
+[node name="Button3" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "3"
+
+[node name="Button4" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "4"
+
+[node name="Button5" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "5"
+
+[node name="Button6" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "6"
+
+[node name="Button7" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "7"
+
+[node name="Button8" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "8"
+
+[node name="Button9" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "9"
+
+[node name="Button0" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "0"
+
+[node name="Buttonq" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "q"
+
+[node name="Buttonw" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "w"
+
+[node name="Buttone" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "e"
+
+[node name="Buttonr" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "r"
+
+[node name="Buttont" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "t"
+
+[node name="Buttony" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "y"
+
+[node name="Buttonu" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "u"
+
+[node name="Buttoni" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "i"
+
+[node name="Buttono" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "o"
+
+[node name="Buttonp" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "p"
+
+[node name="Buttona" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "a"
+
+[node name="Buttons" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "s"
+
+[node name="Buttond" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "d"
+
+[node name="Buttonf" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "f"
+
+[node name="Buttong" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "g"
+
+[node name="Buttonh" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "h"
+
+[node name="Buttonj" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "j"
+
+[node name="Buttonk" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "k"
+
+[node name="Buttonl" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "l"
+
+[node name="Buttonñ" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "ñ"
+
+[node name="Buttonz" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "z"
+
+[node name="Buttonx" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "x"
+
+[node name="Buttonc" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "c"
+
+[node name="Buttonv" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "v"
+
+[node name="Buttonb" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "b"
+
+[node name="Buttonn" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "n"
+
+[node name="Buttonm" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "m"
+
+[node name="Button_punto" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "."
+
+[node name="Button_borrar" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "<-"
+
+[node name="BtnAceptar" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.416
+anchor_top = 2.175
+anchor_right = 0.57
+anchor_bottom = 2.383
+offset_left = -0.671997
+offset_top = 0.0999146
+offset_right = -0.0737305
+offset_bottom = 0.0358887
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_u3y70")
+theme_override_styles/hover_pressed = ExtResource("3_u3y70")
+theme_override_styles/hover = ExtResource("3_u3y70")
+theme_override_styles/pressed = ExtResource("3_u3y70")
+theme_override_styles/normal = ExtResource("3_u3y70")
+text = "GUARDAR"
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("2_m7fxd")
+
+[node name="buttonShort" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_b37i2")

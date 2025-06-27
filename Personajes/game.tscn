@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqjxon772tq7q"]
+
+[ext_resource type="Script" uid="uid://bi3t8aoctn43c" path="res://Scripts/Juego/juego.gd" id="1_ul8cc"]
+[ext_resource type="Texture2D" uid="uid://0qowhbgehiyc" path="res://Sprites/fondo.png" id="2_wsgpf"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ul8cc")
+
+[node name="CharacterContainer" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1090.0
+offset_bottom = 1915.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1089.0
+offset_bottom = 1919.0
+texture = ExtResource("2_wsgpf")
+expand_mode = 1

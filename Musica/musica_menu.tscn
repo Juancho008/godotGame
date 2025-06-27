@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dx61o3y1o2ibk"]
+
+[ext_resource type="Script" uid="uid://s7kbpwdgxliu" path="res://Scripts/Musica/musica_menu.gd" id="2_3jc5h"]
+[ext_resource type="AudioStream" uid="uid://djln2g6cf6c3x" path="res://Musica/MenuVer.mp3" id="2_mao07"]
+[ext_resource type="AudioStream" uid="uid://cck758awmxaob" path="res://Musica/ranking.mp3" id="3_mao07"]
+
+[node name="MusicaMenu" type="Node2D"]
+script = ExtResource("2_3jc5h")
+
+[node name="Musica" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_mao07")
+
+[node name="Ranking" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_mao07")
+
+[node name="Juego1" type="AudioStreamPlayer2D" parent="."]

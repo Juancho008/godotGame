@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://qlvnqm6f8xca"]
+
+[ext_resource type="Script" uid="uid://b1cib3r6wxq6e" path="res://Scripts/Juego/piece.gd" id="1_on00a"]
+[ext_resource type="Texture2D" uid="uid://ifr5ayq0bhsa" path="res://Imagenes/sello.png" id="2_vhdhk"]
+
+[node name="Piece" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1080.0
+offset_bottom = -1920.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_on00a")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 200.0
+texture = ExtResource("2_vhdhk")
+expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="."]

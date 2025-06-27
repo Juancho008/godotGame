@@ -1,0 +1,124 @@
+[gd_scene load_steps=11 format=3 uid="uid://cne80xeey7c2r"]
+
+[ext_resource type="Script" uid="uid://bi2c6puqn2oj7" path="res://Scripts/Npc1/npc.gd" id="1_yt2xb"]
+[ext_resource type="Texture2D" uid="uid://cygtd0d0271v4" path="res://Sprites/NPC-2.png" id="2_6x672"]
+[ext_resource type="Shader" uid="uid://bctqasilrmq4o" path="res://Shader/npc-1.gdshader" id="2_nt6eq"]
+[ext_resource type="Texture2D" uid="uid://clyolfltxvqjb" path="res://Imagenes/maga/Dialogo.png" id="4_n60xp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n60xp"]
+shader = ExtResource("2_nt6eq")
+shader_parameter/glow_color = Color(1, 1, 0.2, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_k8n2m"]
+font_size = 25
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_vqx25"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialogo:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_bp8ae"]
+resource_name = "mostrar_dialogo"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialogo:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_8w4cu"]
+resource_name = "ocultar_dialogo"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialogo:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [false, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vqx25"]
+_data = {
+&"RESET": SubResource("Animation_vqx25"),
+&"mostrar_dialogo": SubResource("Animation_bp8ae"),
+&"ocultar_dialogo": SubResource("Animation_8w4cu")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(60, 574)
+input_pickable = true
+script = ExtResource("1_yt2xb")
+metadata/_edit_group_ = true
+
+[node name="HaloSprite" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 0, 0.792157)
+self_modulate = Color(1, 1, 0, 0.792157)
+z_index = 1
+material = SubResource("ShaderMaterial_n60xp")
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("2_6x672")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 5
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_6x672")
+
+[node name="dialogo" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_bottom = 0.909
+offset_left = 220.0
+offset_top = -70.0
+offset_right = 421.0
+offset_bottom = 8.0
+grow_vertical = 0
+rotation = 3.14159
+texture = ExtResource("4_n60xp")
+expand_mode = 1
+flip_h = true
+
+[node name="dialogo_label" type="Label" parent="dialogo"]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 64.0
+offset_right = 370.0
+offset_bottom = 101.0
+rotation = 3.14159
+label_settings = SubResource("LabelSettings_k8n2m")
+vertical_alignment = 2
+justification_flags = 131
+max_lines_visible = 150
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-19, 70, -36, 70, -21, 23, -28, 26, -34, 15, -36, -13, -27, -30, -18, -35, -23, -52, -23, -60, -8, -74, 10, -73, 18, -65, 19, -52, 15, -44, 15, -36, 19, -30, 26, -20, 29, -10, 31, 1, 31, 16, 26, 27, 18, 29, 15, 44, 16, 51, 18, 56, 22, 60, 28, 67, 16, 70, 9, 72, 1, 71, -2, 64, -2, 49, -3, 30, -10, 53, -12, 61)
+
+[node name="FraseTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vqx25")
+}

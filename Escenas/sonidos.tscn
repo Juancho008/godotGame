@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://7xjil5d5ndkf"]
+
+[node name="Sonidos" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.47451, 0.54902, 0.752941, 1)
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_top = 188.0
+offset_right = 1079.0
+offset_bottom = 1013.0
+theme_override_constants/h_separation = 200
+theme_override_constants/v_separation = 50
+columns = 2
+
+[node name="Label" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 120
+text = "Volumen"
+
+[node name="HSlider" type="HSlider" parent="GridContainer"]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 2
+value = 100.0
+
+[node name="Label2" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 120
+text = "Musica"
+
+[node name="HSlider2" type="HSlider" parent="GridContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+value = 100.0

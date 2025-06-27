@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj0l3gq5oeapf"]
+
+[ext_resource type="Script" uid="uid://p17dkhvgbcka" path="res://Scripts/Videos/control.gd" id="1_3ux8v"]
+[ext_resource type="VideoStream" uid="uid://bnty3tchymxyt" path="res://Videos/final.ogv" id="2_l20sg"]
+
+[node name="Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1370.0
+offset_bottom = 770.0
+script = ExtResource("1_3ux8v")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -7.0
+offset_right = 1375.0
+offset_bottom = 769.0
+stream = ExtResource("2_l20sg")
+expand = true
+buffering_msec = 10

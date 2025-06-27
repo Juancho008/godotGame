@@ -1,0 +1,184 @@
+[gd_scene load_steps=18 format=3 uid="uid://blfv022gs8hdp"]
+
+[ext_resource type="Script" uid="uid://n2fva6pbnr35" path="res://Scripts/menu.gd" id="1_p25xy"]
+[ext_resource type="Texture2D" uid="uid://c0fte0x6tspvb" path="res://Imagenes/maga/imgaen (5).png" id="2_17m5t"]
+[ext_resource type="Texture2D" uid="uid://d2vkitrlt6qjy" path="res://Sprites/Emblema.png" id="3_17m5t"]
+[ext_resource type="Texture2D" uid="uid://grj5e1iolrhn" path="res://Imagenes/maga/imgaen (4).png" id="3_cp3rd"]
+[ext_resource type="StyleBox" uid="uid://dckk8emmywlms" path="res://Themes/menu.tres" id="4_kim34"]
+[ext_resource type="AudioStream" uid="uid://di45b1ofdnwl1" path="res://Musica/buttonClickCut.mp3" id="6_v8bcg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1j0rj"]
+texture = ExtResource("3_cp3rd")
+expand_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ftgnq"]
+texture = ExtResource("3_cp3rd")
+expand_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a1ang"]
+texture = ExtResource("3_cp3rd")
+expand_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oeqfb"]
+texture = ExtResource("3_cp3rd")
+expand_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nme5s"]
+texture = ExtResource("3_cp3rd")
+expand_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q5mo8"]
+texture = ExtResource("3_cp3rd")
+expand_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v8bcg"]
+texture = ExtResource("3_cp3rd")
+expand_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cp3rd"]
+texture = ExtResource("3_cp3rd")
+expand_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1bgts"]
+texture = ExtResource("3_cp3rd")
+expand_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x0hy4"]
+texture = ExtResource("3_cp3rd")
+expand_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_06xcy"]
+texture = ExtResource("3_cp3rd")
+expand_margin_bottom = 20.0
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -2.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p25xy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0600944, 0.358516, 0.56292, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 3.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_17m5t")
+expand_mode = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 800.0
+offset_top = 545.0
+offset_right = 1150.0
+offset_bottom = 745.0
+grow_vertical = 2
+theme_override_constants/separation = 60
+
+[node name="Opciones" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = ExtResource("4_kim34")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_kim34")
+theme_override_styles/hover_mirrored = ExtResource("4_kim34")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1j0rj")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ftgnq")
+theme_override_styles/normal = SubResource("StyleBoxTexture_a1ang")
+text = "Opciones"
+
+[node name="Salir" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = ExtResource("4_kim34")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_kim34")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_oeqfb")
+theme_override_styles/hover_mirrored = ExtResource("4_kim34")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nme5s")
+theme_override_styles/normal = SubResource("StyleBoxTexture_q5mo8")
+text = "Salir"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 122.0
+offset_top = 560.0
+offset_right = 472.0
+offset_bottom = -75.0
+grow_vertical = 2
+theme_override_constants/separation = 60
+
+[node name="Jugar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = ExtResource("4_kim34")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_kim34")
+theme_override_styles/hover_mirrored = ExtResource("4_kim34")
+theme_override_styles/hover = ExtResource("4_kim34")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_v8bcg")
+theme_override_styles/normal = SubResource("StyleBoxTexture_cp3rd")
+text = "Iniciar"
+
+[node name="Ranking" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = ExtResource("4_kim34")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_kim34")
+theme_override_styles/hover_mirrored = ExtResource("4_kim34")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1bgts")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_x0hy4")
+theme_override_styles/normal = SubResource("StyleBoxTexture_06xcy")
+text = "Ranking"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_top = 0.003
+anchor_right = 0.184
+anchor_bottom = 0.246
+offset_left = 9.0
+offset_top = -0.304
+offset_right = 0.656006
+offset_bottom = 30.072
+texture = ExtResource("3_17m5t")
+expand_mode = 1
+
+[node name="clickButton" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_v8bcg")
+
+[connection signal="pressed" from="VBoxContainer2/Opciones" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="VBoxContainer2/Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="VBoxContainer/Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Ranking" to="." method="_on_ranking_pressed"]

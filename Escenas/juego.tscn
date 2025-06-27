@@ -1,0 +1,452 @@
+[gd_scene load_steps=17 format=3 uid="uid://bfn5bjr1d1l54"]
+
+[ext_resource type="Script" uid="uid://bi3t8aoctn43c" path="res://Scripts/Juego/juego.gd" id="1_d3d2o"]
+[ext_resource type="Texture2D" uid="uid://c0fte0x6tspvb" path="res://Imagenes/maga/imgaen (5).png" id="2_spkme"]
+[ext_resource type="StyleBox" uid="uid://dckk8emmywlms" path="res://Themes/menu.tres" id="3_aoscc"]
+[ext_resource type="PackedScene" uid="uid://d21if58sefcx5" path="res://Personajes/legis.tscn" id="3_spkme"]
+[ext_resource type="Texture2D" uid="uid://clyolfltxvqjb" path="res://Imagenes/maga/Dialogo.png" id="5_74bab"]
+[ext_resource type="StyleBox" uid="uid://dkod7aksfrs5h" path="res://Themes/juego.tres" id="5_aoscc"]
+[ext_resource type="Texture2D" uid="uid://dyuyv6o2wnwg6" path="res://Imagenes/pizarra.png" id="6_i3j75"]
+[ext_resource type="AudioStream" uid="uid://b2rwwn4ulyhnd" path="res://Musica/hombre.mp3" id="8_irylq"]
+[ext_resource type="AudioStream" uid="uid://dmtulba1ne1c8" path="res://Musica/victoria.mp3" id="9_va84l"]
+[ext_resource type="AudioStream" uid="uid://di45b1ofdnwl1" path="res://Musica/buttonClickCut.mp3" id="10_wqotv"]
+
+[sub_resource type="Animation" id="Animation_n77xa"]
+resource_name = "Legis_inicio"
+length = 22.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/CharacterBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-190, 580), Vector2(178, 580)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/LabelLegis:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.8, 3, 7, 7.5, 11.5, 12.5, 19, 20),
+"transitions": PackedFloat32Array(1, 10.1965, 1, 10.1965, 1, 15.455, 1, 11.3137),
+"update": 0,
+"values": ["", "Estoy acá para  acompañarte en este
+recorrido-juego donde", "", "vas a descubrir cómo se  construyen las
+leyes!", "", "Necesito que me ayudes, debemos 
+encontrar al diputado! ", "", "Para ubicarlo solo debes presionar sobre 
+el que diga la frase correcta!."]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/ColorRectLegis:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_aoscc"]
+resource_name = "Legis_oculto"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/CharacterBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-190, 1727), Vector2(-190, 1727)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/LabelLegis:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["           ", "           "]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/ColorRectLegis:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_d3d2o"]
+resource_name = "Legis_siguiente"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/CharacterBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-190, 580), Vector2(194, 580)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/LabelLegis:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 4, 7, 8),
+"transitions": PackedFloat32Array(1, 4.92458, 1, 1),
+"update": 0,
+"values": ["", " ¡Misión cumplida!  Pero no bajemos la
+ guardia...", "", "¡hay otra tarea legislativa que esta 
+esperando  de tu talento!"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/ColorRectLegis:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/Victoria:theme_override_colors/font_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(8, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/Victoria:theme_override_colors/font_shadow_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(8, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer/Victoria:theme_override_colors/font_outline_color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(8, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_spkme"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/CharacterBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-190, 1727)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/LabelLegis:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/LabelPregunta:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/ColorRectLegis:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/ColorRectPregunta:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer/Victoria:theme_override_colors/font_color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer/Victoria:theme_override_colors/font_shadow_color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimationPlayer/Victoria:theme_override_colors/font_outline_color")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_74bab"]
+resource_name = "pregunta"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/LabelPregunta:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": ["", "Segun la ley del voto joven.... 
+¿a que edad pueden votar los jóvenes Argentinos?"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/ColorRectPregunta:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_spkme"]
+_data = {
+&"Legis_inicio": SubResource("Animation_n77xa"),
+&"Legis_oculto": SubResource("Animation_aoscc"),
+&"Legis_siguiente": SubResource("Animation_d3d2o"),
+&"RESET": SubResource("Animation_spkme"),
+&"pregunta": SubResource("Animation_74bab")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_d3d2o")
+
+[node name="CharacterContainer" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1366.0
+offset_bottom = 764.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1366.0
+offset_bottom = 767.0
+texture = ExtResource("2_spkme")
+expand_mode = 1
+
+[node name="TimerLabel" type="Label" parent="."]
+offset_left = 420.0
+offset_top = -9.0
+offset_right = 833.0
+offset_bottom = 152.0
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CountdownTimer" type="Timer" parent="."]
+
+[node name="ContinueButton" type="Button" parent="."]
+offset_left = 400.0
+offset_top = 281.0
+offset_right = 843.0
+offset_bottom = 420.0
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 90
+theme_override_styles/focus = ExtResource("3_aoscc")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_aoscc")
+theme_override_styles/hover_pressed = ExtResource("3_aoscc")
+theme_override_styles/hover = ExtResource("3_aoscc")
+theme_override_styles/pressed = ExtResource("3_aoscc")
+theme_override_styles/normal = ExtResource("3_aoscc")
+text = "Continuar"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_spkme")
+}
+
+[node name="CharacterBody2D" parent="AnimationPlayer" instance=ExtResource("3_spkme")]
+position = Vector2(-190, 1727)
+scale = Vector2(4, 4)
+
+[node name="ColorRectLegis" type="TextureRect" parent="AnimationPlayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 387.0
+offset_top = 522.0
+offset_right = 1342.0
+offset_bottom = 740.0
+texture = ExtResource("5_74bab")
+
+[node name="LabelLegis" type="Label" parent="AnimationPlayer"]
+offset_left = 428.0
+offset_top = 582.0
+offset_right = 1294.0
+offset_bottom = 739.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+
+[node name="ColorRectPregunta" type="TextureRect" parent="AnimationPlayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_left = 0.204
+anchor_top = 0.223
+anchor_right = 0.804
+anchor_bottom = 0.369
+offset_left = -142.664
+offset_top = -143.264
+offset_right = 153.736
+offset_bottom = 232.608
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_i3j75")
+expand_mode = 1
+
+[node name="LabelPregunta" type="Label" parent="AnimationPlayer"]
+anchors_preset = -1
+anchor_left = 0.203
+anchor_top = 0.261
+anchor_right = 0.803
+anchor_bottom = 0.349
+offset_left = 9.702
+offset_top = -20.448
+offset_right = 29.1021
+offset_bottom = 71.968
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Victoria" type="Label" parent="AnimationPlayer"]
+offset_left = 380.0
+offset_top = 50.0
+offset_right = 860.0
+offset_bottom = 245.0
+theme_override_colors/font_color = Color(1, 1, 1, 0)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 120
+text = "¡ Victoria !"
+vertical_alignment = 1
+uppercase = true
+
+[node name="AyudarButton" type="Button" parent="."]
+offset_left = 1141.0
+offset_top = 439.0
+offset_right = 1328.0
+offset_bottom = 536.0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = ExtResource("5_aoscc")
+theme_override_styles/hover_pressed_mirrored = ExtResource("5_aoscc")
+theme_override_styles/hover_pressed = ExtResource("5_aoscc")
+theme_override_styles/hover = ExtResource("5_aoscc")
+theme_override_styles/pressed = ExtResource("5_aoscc")
+theme_override_styles/normal = ExtResource("5_aoscc")
+text = "¡Vamos!"
+
+[node name="dolor_hombre" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_irylq")
+volume_db = 7.0
+
+[node name="victoria" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_va84l")
+volume_db = 24.0
+
+[node name="clickButton" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_wqotv")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://d21if58sefcx5"]
+
+[ext_resource type="Texture2D" uid="uid://dyiomvyqhnc5y" path="res://Sprites/legis.png" id="1_3lv58"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(60, 574)
+input_pickable = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 5
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_3lv58")

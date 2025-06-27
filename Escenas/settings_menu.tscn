@@ -1,0 +1,151 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgj1qddnjjr07"]
+
+[ext_resource type="Script" uid="uid://clhiv1ol7tr63" path="res://Scripts/Configuraciones/settings_menu.gd" id="1_xgmn4"]
+[ext_resource type="StyleBox" uid="uid://e4xhxm5bjt6w" path="res://Sprites/menu-button.tres" id="2_n7q0y"]
+[ext_resource type="AudioStream" uid="uid://di45b1ofdnwl1" path="res://Musica/buttonClickCut.mp3" id="3_kjyb2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n7q0y"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.562
+offset_bottom = 0.959961
+script = ExtResource("1_xgmn4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.002
+anchor_bottom = 0.882
+offset_left = 2.0
+offset_right = 0.268066
+offset_bottom = 392.468
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+color = Color(0.592157, 0.678431, 0.988235, 0.537255)
+
+[node name="SettingsTabs" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.266
+anchor_bottom = 0.227
+offset_right = 1002.64
+offset_bottom = 674.805
+theme_override_font_sizes/font_size = 90
+current_tab = 1
+
+[node name="Video" type="TabBar" parent="SettingsTabs"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsTabs/Video"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.051
+anchor_right = 0.976
+anchor_bottom = 0.943
+offset_left = 19.0
+offset_top = 0.343998
+offset_right = -0.0560303
+offset_bottom = -0.208008
+
+[node name="VideoSettings" type="GridContainer" parent="SettingsTabs/Video/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 90
+theme_override_constants/v_separation = 90
+columns = 2
+
+[node name="LabelDisplay" type="Label" parent="SettingsTabs/Video/MarginContainer/VideoSettings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Modo Pantalla"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnDisplay" type="OptionButton" parent="SettingsTabs/Video/MarginContainer/VideoSettings"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 70
+selected = 0
+item_count = 2
+popup/item_0/text = "Ventana"
+popup/item_0/id = 0
+popup/item_1/text = "Pantalla Completa"
+popup/item_1/id = 1
+
+[node name="Audio" type="TabBar" parent="SettingsTabs"]
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsTabs/Audio"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.051
+anchor_right = 0.976
+anchor_bottom = 0.943
+offset_left = 19.0
+offset_top = 0.575001
+offset_right = -0.216064
+offset_bottom = -505.525
+
+[node name="MaxAudioContainer" type="HBoxContainer" parent="SettingsTabs/Audio/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 100
+
+[node name="LabelAudio" type="Label" parent="SettingsTabs/Audio/MarginContainer/MaxAudioContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Volumen General"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MaxAudio" type="HSlider" parent="SettingsTabs/Audio/MarginContainer/MaxAudioContainer"]
+custom_minimum_size = Vector2(400, 90)
+layout_mode = 2
+size_flags_horizontal = 10
+value = 100.0
+
+[node name="LabelCurrentAudio" type="Label" parent="SettingsTabs/Audio/MarginContainer/MaxAudioContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Max"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.817
+anchor_top = 0.012
+anchor_right = 0.995
+anchor_bottom = 0.215
+offset_left = -0.0220947
+offset_top = -0.190911
+offset_right = -0.170044
+offset_bottom = -0.00382233
+theme_override_colors/font_hover_color = Color(0.579691, 0.579691, 0.579691, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n7q0y")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_n7q0y")
+theme_override_styles/hover_pressed = ExtResource("2_n7q0y")
+theme_override_styles/hover_mirrored = ExtResource("2_n7q0y")
+theme_override_styles/hover = ExtResource("2_n7q0y")
+theme_override_styles/pressed_mirrored = ExtResource("2_n7q0y")
+theme_override_styles/pressed = ExtResource("2_n7q0y")
+theme_override_styles/normal_mirrored = ExtResource("2_n7q0y")
+theme_override_styles/normal = ExtResource("2_n7q0y")
+text = "Volver"
+
+[node name="clickButton" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_kjyb2")
+
+[connection signal="item_selected" from="SettingsTabs/Video/MarginContainer/VideoSettings/BtnDisplay" to="." method="_on_btn_display_item_selected"]
+[connection signal="value_changed" from="SettingsTabs/Audio/MarginContainer/MaxAudioContainer/MaxAudio" to="." method="_on_max_audio_value_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

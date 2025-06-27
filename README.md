@@ -1,2 +1,3 @@
-# godotGame
-Juego echo con el motor grafico de GODOT
+# CaminoDeLaLey
+
+Juego realizado para el Embajador

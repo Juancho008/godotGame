@@ -1,0 +1,482 @@
+[gd_scene load_steps=32 format=3 uid="uid://bf6r2edf1h4jd"]
+
+[ext_resource type="Texture2D" uid="uid://bq43cybumn20u" path="res://Sprites/emiciclo.png" id="1_iu1t1"]
+[ext_resource type="Script" uid="uid://dk55brqhc2fwh" path="res://Scripts/Juego/juego_3.gd" id="1_t383m"]
+[ext_resource type="PackedScene" uid="uid://d21if58sefcx5" path="res://Personajes/legis.tscn" id="3_22mbs"]
+[ext_resource type="Texture2D" uid="uid://c7ql7lqjkdo86" path="res://Sprites/Votacion.png" id="4_la31x"]
+[ext_resource type="Texture2D" uid="uid://clyolfltxvqjb" path="res://Imagenes/maga/Dialogo.png" id="4_p1pls"]
+[ext_resource type="StyleBox" uid="uid://dkod7aksfrs5h" path="res://Themes/juego.tres" id="5_cwwmt"]
+[ext_resource type="StyleBox" uid="uid://dckk8emmywlms" path="res://Themes/menu.tres" id="5_jp5w8"]
+[ext_resource type="AudioStream" uid="uid://di45b1ofdnwl1" path="res://Musica/buttonClickCut.mp3" id="8_43lko"]
+[ext_resource type="AudioStream" uid="uid://ctjbghkgw4br4" path="res://Musica/aplauso.mp3" id="8_s6wcr"]
+
+[sub_resource type="Animation" id="Animation_p1pls"]
+resource_name = "Legis_fin3"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/CharacterBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-190, 580), Vector2(220, 580)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/LabelLegis:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": ["", "Perfecto, aun nos queda  una
+ultima tarea ! Vamos! "]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/ColorRectLegis:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_22mbs"]
+resource_name = "Legis_juego3"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/CharacterBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-190, 580), Vector2(220, 580)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/LabelLegis:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2, 3, 8, 9, 14, 15),
+"transitions": PackedFloat32Array(1, 11.3137, 1, 11.3137, 1, 1),
+"update": 0,
+"values": ["", "¡Perfecto! En esta nueva misión 
+legislativa vamos a votar. Pero tranquilo, ", "", "es súper sencillo: cuando aparezca el 
+botón de Votar, solo tienes que presionarlo.", "", "Tendrás 3 segundos para  hacerlo...
+¿Estas Listo? ¡Entonces empecemos!"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/ColorRectLegis:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jp5w8"]
+resource_name = "Legis_otra"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/CharacterBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-190, 580), Vector2(220, 580)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/LabelLegis:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": ["", "Perfecto! , esta Ronda fue de Practica,
+ahora, vamos a intentarlo una vez mas! "]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/ColorRectLegis:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_la31x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/CharacterBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-190, 1727)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/LabelLegis:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/votamos:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/LabelVotamos:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/ColorRectLegis:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer/cuadroVotamos:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cwwmt"]
+resource_name = "votacion"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/votamos:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(5, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/LabelVotamos:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": ["", "EN CONSIDERACIÓN........."]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/cuadroVotamos:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cwwmt"]
+_data = {
+&"Legis_fin3": SubResource("Animation_p1pls"),
+&"Legis_juego3": SubResource("Animation_22mbs"),
+&"Legis_otra": SubResource("Animation_jp5w8"),
+&"RESET": SubResource("Animation_la31x"),
+&"votacion": SubResource("Animation_cwwmt")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_la31x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cwwmt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jp5w8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p1pls"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_43lko"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s6wcr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xqgfw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k4nyb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8itbt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_63v5s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tpt6p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wtht5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r5xru"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5f37u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vhq2n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gadu5"]
+
+[node name="juego-3" type="Node2D"]
+script = ExtResource("1_t383m")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1366.0
+offset_bottom = 774.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1371.0
+offset_bottom = 775.0
+texture = ExtResource("1_iu1t1")
+expand_mode = 1
+
+[node name="TimerLabel" type="Label" parent="."]
+offset_left = 517.0
+offset_top = 9.0
+offset_right = 816.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CountdownTimer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+libraries = {
+&"": SubResource("AnimationLibrary_cwwmt")
+}
+
+[node name="CharacterBody2D" parent="AnimationPlayer" instance=ExtResource("3_22mbs")]
+position = Vector2(220, 580)
+scale = Vector2(4, 4)
+
+[node name="ColorRectLegis" type="TextureRect" parent="AnimationPlayer"]
+anchors_preset = -1
+anchor_left = 0.38
+anchor_top = 0.866
+anchor_right = 0.977
+anchor_bottom = 0.984
+offset_left = -94.08
+offset_top = -130.088
+offset_right = 31.418
+offset_bottom = 0.287964
+texture = ExtResource("4_p1pls")
+
+[node name="LabelLegis" type="Label" parent="AnimationPlayer"]
+anchors_preset = -1
+anchor_left = 0.381
+anchor_top = 0.864
+anchor_right = 0.973
+anchor_bottom = 0.984
+offset_left = -64.446
+offset_top = -83.552
+offset_right = 49.882
+offset_bottom = -18.712
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Perfecto! , esta Ronda fue de Practica. 
+¡vamos a intentarlo una vez mas! "
+vertical_alignment = 1
+
+[node name="votamos" type="TextureRect" parent="AnimationPlayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 435.0
+offset_top = 196.0
+offset_right = -469.0
+offset_bottom = -116.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_la31x")
+expand_mode = 1
+
+[node name="cuadroVotamos" type="TextureRect" parent="AnimationPlayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_right = 0.597
+anchor_bottom = 0.12
+offset_left = -1.0
+offset_top = 9.0
+offset_right = -0.502014
+offset_bottom = 67.84
+texture = ExtResource("4_p1pls")
+
+[node name="LabelVotamos" type="Label" parent="AnimationPlayer"]
+anchors_preset = -1
+anchor_right = 0.52
+anchor_bottom = 0.113
+offset_left = 64.0
+offset_top = 60.0
+offset_right = 57.6799
+offset_bottom = 51.216
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Aprobado" type="Button" parent="AnimationPlayer"]
+anchors_preset = -1
+anchor_left = 0.231
+anchor_top = 0.402
+anchor_right = 0.794
+anchor_bottom = 0.494
+offset_left = 168.454
+offset_top = 41.264
+offset_right = -226.604
+offset_bottom = 61.608
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_la31x")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cwwmt")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_jp5w8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_p1pls")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_43lko")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s6wcr")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_xqgfw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k4nyb")
+
+[node name="Reprobado" type="Button" parent="AnimationPlayer"]
+anchors_preset = -1
+anchor_left = 0.354
+anchor_top = 0.621
+anchor_right = 0.628
+anchor_bottom = 0.729
+offset_left = 0.436005
+offset_top = 0.0719604
+offset_right = 0.151978
+offset_bottom = 14.128
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_8itbt")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_63v5s")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_tpt6p")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wtht5")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_r5xru")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5f37u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_vhq2n")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gadu5")
+
+[node name="ContinueButton" type="Button" parent="."]
+offset_left = 487.0
+offset_top = 350.0
+offset_right = 930.0
+offset_bottom = 489.0
+size_flags_horizontal = 4
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 90
+theme_override_styles/focus = ExtResource("5_jp5w8")
+theme_override_styles/hover_pressed_mirrored = ExtResource("5_jp5w8")
+theme_override_styles/hover_pressed = ExtResource("5_jp5w8")
+theme_override_styles/hover = ExtResource("5_jp5w8")
+theme_override_styles/pressed = ExtResource("5_jp5w8")
+theme_override_styles/normal = ExtResource("5_jp5w8")
+text = "Continuar"
+metadata/_edit_use_anchors_ = true
+
+[node name="nerviosButton" type="Button" parent="."]
+offset_left = 1090.0
+offset_top = 477.0
+offset_right = 1358.0
+offset_bottom = 560.0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = ExtResource("5_cwwmt")
+theme_override_styles/hover_pressed_mirrored = ExtResource("5_cwwmt")
+theme_override_styles/hover_pressed = ExtResource("5_cwwmt")
+theme_override_styles/hover = ExtResource("5_cwwmt")
+theme_override_styles/pressed = ExtResource("5_cwwmt")
+theme_override_styles/normal = ExtResource("5_cwwmt")
+text = "¡Que nervios!"
+
+[node name="PenalizacionLabel" type="Label" parent="."]
+offset_left = 858.0
+offset_top = 9.0
+offset_right = 1140.0
+offset_bottom = 151.0
+theme_override_font_sizes/font_size = 80
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="aplausos" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_s6wcr")
+
+[node name="clickButton" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_43lko")

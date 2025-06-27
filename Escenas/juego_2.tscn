@@ -1,0 +1,347 @@
+[gd_scene load_steps=25 format=3 uid="uid://k8lbv8v7vi57"]
+
+[ext_resource type="Script" uid="uid://dequakcagnqoc" path="res://Scripts/Juego/juego_2.gd" id="1_kmmnt"]
+[ext_resource type="Texture2D" uid="uid://1e7tga0gwfvq" path="res://Sprites/documento.png" id="1_m8g38"]
+[ext_resource type="PackedScene" uid="uid://d21if58sefcx5" path="res://Personajes/legis.tscn" id="2_lj5g0"]
+[ext_resource type="Texture2D" uid="uid://clyolfltxvqjb" path="res://Imagenes/maga/Dialogo.png" id="4_4pn3g"]
+[ext_resource type="StyleBox" uid="uid://dckk8emmywlms" path="res://Themes/menu.tres" id="4_7uh02"]
+[ext_resource type="StyleBox" uid="uid://dkod7aksfrs5h" path="res://Themes/juego.tres" id="4_kmyww"]
+[ext_resource type="AudioStream" uid="uid://bgdkylpi1ctkh" path="res://Musica/error.mp3" id="7_xsprm"]
+[ext_resource type="AudioStream" uid="uid://di45b1ofdnwl1" path="res://Musica/buttonClickCut.mp3" id="8_3exba"]
+
+[sub_resource type="Animation" id="Animation_kmmnt"]
+resource_name = "Legis-juego2"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/CharacterBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-190, 580), Vector2(184, 580)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/LabelLegis:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2, 4, 9, 9.93333),
+"transitions": PackedFloat32Array(1, 11.7127, 1, 11.3137),
+"update": 0,
+"values": ["", "En este documento hay varios errores. 
+Debemos de encontrarlo... !!", "", "Debe marcar cual es en la pantalla. 
+¡Ojo debes leerlo bien!"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/ColorRectLegis:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kmyww"]
+resource_name = "Legis_fin"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/CharacterBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-190, 580), Vector2(202, 580)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/LabelLegis:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2, 3.5, 8, 11),
+"transitions": PackedFloat32Array(1, 11.3137, 1, 11.3137),
+"update": 0,
+"values": ["", "Bien hecho, sabia que  podias lograrlo... Pero aun, hay 
+cosas  que requieren tu talento.", "", "Asi que vamos a una nueva Mision Legislativa."]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/ColorRectLegis:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7uh02"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/CharacterBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-190, 1727)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/LabelLegis:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/ColorRectLegis:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kmyww"]
+_data = {
+&"Legis-juego2": SubResource("Animation_kmmnt"),
+&"Legis_fin": SubResource("Animation_kmyww"),
+&"RESET": SubResource("Animation_7uh02")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kmmnt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4pn3g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xsprm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3exba"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_offye"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mpy6g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vjd5q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wtjq7"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7uh02"]
+bg_color = Color(0.733333, 0.847059, 0.992157, 0.6)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kmyww"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmmnt"]
+bg_color = Color(0.337255, 0.592157, 1, 0.447059)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7uh02"]
+
+[node name="juego-2" type="Node2D"]
+script = ExtResource("1_kmmnt")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1371.0
+offset_bottom = 764.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1367.0
+offset_bottom = 766.0
+texture = ExtResource("1_m8g38")
+expand_mode = 1
+
+[node name="TimerLabel" type="Label" parent="."]
+offset_left = 516.0
+offset_top = 6.0
+offset_right = 815.0
+offset_bottom = 89.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CountdownTimer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kmyww")
+}
+
+[node name="CharacterBody2D" parent="AnimationPlayer" instance=ExtResource("2_lj5g0")]
+visible = false
+position = Vector2(-190, 1727)
+scale = Vector2(4, 4)
+
+[node name="ColorRectLegis" type="TextureRect" parent="AnimationPlayer"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = 365.0
+offset_top = 547.0
+offset_right = 1351.0
+offset_bottom = 751.0
+texture = ExtResource("4_4pn3g")
+
+[node name="LabelLegis" type="Label" parent="AnimationPlayer"]
+visible = false
+offset_left = 429.0
+offset_top = 547.0
+offset_right = 1363.0
+offset_bottom = 752.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+vertical_alignment = 1
+
+[node name="EntendidoButton" type="Button" parent="."]
+visible = false
+offset_left = 1126.0
+offset_top = 421.0
+offset_right = 1363.0
+offset_bottom = 504.0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = ExtResource("4_kmyww")
+theme_override_styles/hover_pressed = ExtResource("4_kmyww")
+theme_override_styles/hover = ExtResource("4_kmyww")
+theme_override_styles/pressed = ExtResource("4_kmyww")
+theme_override_styles/normal_mirrored = ExtResource("4_kmyww")
+theme_override_styles/normal = ExtResource("4_kmyww")
+text = "Entendido!"
+
+[node name="EquivocadoButton" type="Button" parent="."]
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 1365.0
+offset_bottom = 758.0
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_kmmnt")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_4pn3g")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_xsprm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3exba")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_offye")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mpy6g")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_vjd5q")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wtjq7")
+
+[node name="CorrectoButton" type="Button" parent="."]
+offset_left = 52.0
+offset_top = 429.0
+offset_right = 221.0
+offset_bottom = 478.0
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_7uh02")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kmyww")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kmmnt")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7uh02")
+
+[node name="CorrectoButton2" type="Button" parent="."]
+offset_left = 977.0
+offset_top = 442.0
+offset_right = 1099.0
+offset_bottom = 465.0
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_7uh02")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kmyww")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kmmnt")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7uh02")
+
+[node name="CorrectoButton3" type="Button" parent="."]
+offset_left = 991.0
+offset_top = 663.0
+offset_right = 1035.0
+offset_bottom = 686.0
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_7uh02")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kmyww")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kmmnt")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7uh02")
+
+[node name="CorrectoButton4" type="Button" parent="."]
+offset_left = 904.0
+offset_top = 693.0
+offset_right = 946.0
+offset_bottom = 725.0
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_7uh02")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kmyww")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kmmnt")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7uh02")
+
+[node name="CorrectoButton5" type="Button" parent="."]
+offset_left = 706.0
+offset_top = 584.0
+offset_right = 809.0
+offset_bottom = 616.0
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_7uh02")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kmyww")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kmmnt")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7uh02")
+
+[node name="ContinueButton" type="Button" parent="."]
+visible = false
+offset_left = 444.0
+offset_top = 316.0
+offset_right = 887.0
+offset_bottom = 455.0
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 70
+theme_override_styles/focus = ExtResource("4_7uh02")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_7uh02")
+theme_override_styles/hover_pressed = ExtResource("4_7uh02")
+theme_override_styles/hover = ExtResource("4_7uh02")
+theme_override_styles/pressed = ExtResource("4_7uh02")
+theme_override_styles/normal = ExtResource("4_7uh02")
+text = "Continuar"
+metadata/_edit_use_anchors_ = true
+
+[node name="CorrectosLabel" type="Label" parent="."]
+offset_left = 1139.0
+offset_top = 97.0
+offset_right = 1363.0
+offset_bottom = 200.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.188275, 0.586224, 0.862368, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 90
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="error" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_xsprm")
+volume_db = 20.0
+
+[node name="clickButton" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_3exba")

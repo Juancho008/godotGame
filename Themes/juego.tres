@@ -1,0 +1,9 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://dkod7aksfrs5h"]
+
+[ext_resource type="Texture2D" uid="uid://cty4qukf715j" path="res://Imagenes/maga/imgaen (3).png" id="1_kr27k"]
+
+[resource]
+texture = ExtResource("1_kr27k")
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 20.0

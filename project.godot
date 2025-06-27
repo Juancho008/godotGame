@@ -1,0 +1,50 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Camino de la Ley"
+run/main_scene="uid://blfv022gs8hdp"
+config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="uid://d2vkitrlt6qjy"
+config/icon="uid://d2vkitrlt6qjy"
+config/macos_native_icon="res://Sprites/Emblema.icns"
+config/windows_native_icon="res://Sprites/favicon.ico"
+
+[autoload]
+
+TRANSICION="*res://Escenas/transicion.tscn"
+Jugador="*res://Scripts/jugador.gd"
+MusicaMenu="*res://Escenas/musica_menu.tscn"
+
+[display]
+
+window/size/viewport_width=1366
+window/size/viewport_height=768
+window/size/initial_position_type=0
+window/size/window_width_override=1366
+window/size/window_height_override=768
+window/stretch/mode="viewport"
+window/handheld/orientation=1
+window/vsync/vsync_mode=0
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-sqlite/demo/addons/godot-sqlite/plugin.cfg", "res://addons/godot-sqlite/plugin.cfg")
+
+[gui]
+
+theme/custom_font="uid://bby2ikk2idga"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
